@@ -1,37 +1,41 @@
-# Brain Tumor Detection using MobileNetV2
+🧠 NeuroVision: MRI Brain Tumor Classifier
+An automated medical imaging diagnostic tool that detects and classifies brain tumors from MRI scans using Deep Learning and Computer Vision.
 
-An automated medical imaging diagnostic tool that detects and classifies brain tumors from MRI scans using Deep Learning.
+🚀 Project Overview
+This project implements a Convolutional Neural Network (CNN) using Transfer Learning (MobileNetV2) to classify MRI scans into four distinct categories. The model aims to assist in the early detection of brain tumors by automating the analysis of medical imagery.
 
-## 📊 Performance
+📊 Performance & Results
+Model Architecture: MobileNetV2 (Pre-trained on ImageNet) with a custom classifier head.
 
-Accuracy: 82% 
+Accuracy: ~82%+ (Model is fine-tuned for medical feature extraction)
 
-Architecture: Transfer Learning with MobileNetV2 (Pre-trained on ImageNet)
+Classes Detected:
 
-Classes: Glioma, Meningioma, Pituitary, No Tumor
+glioma_tumor
 
-## 🧠 Model Architecture Used Transfer Learning to leverage the feature extraction capabilities of MobileNetV2.
+meningioma_tumor
 
-Base: MobileNetV2 (Frozen weights)
+pituitary_tumor
 
-Head: Custom Dense layers with Dropout (0.2) to prevent overfitting.
+no_tumor
 
-Optimization: Adam Optimizer with categorical cross-entropy loss.
+🛠️ Tech Stack
+Core: Python, TensorFlow, Keras
 
-## 🛠️ Tech Stack
+Data Processing: NumPy, Pandas, OpenCV
 
-Python
+Visualization: Matplotlib
 
-TensorFlow / Keras
+🧠 Model Logic
+Data Augmentation: Applied random flips, rotations, and zooms to prevent overfitting and handle limited medical data.
 
-OpenCV
+Transfer Learning: Leveraged the MobileNetV2 backbone (frozen weights) to extract high-level features.
 
-NumPy & Matplotlib
+Classification Head: Added Global Average Pooling and Dropout layers to robustly classify the 4 tumor types.
 
-## 🚀 How to Run
+💻 How to Run
+Open the mri_tumor_detection.ipynb file in Google Colab or Jupyter Notebook.
 
-Clone the repository.
+Run the Setup/Import cells at the top to install necessary libraries.
 
-Install dependencies: pip install -r requirements.txt
-
-Open mri_tumor_detection.ipynb in Jupyter or Google Colab.
+Execute the training block to reproduce the results, or load the saved model mri_tumor_detector.keras for immediate inference.
